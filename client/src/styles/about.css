@@ -1,0 +1,58 @@
+.about-section {
+    background-color: white;
+    padding: 30px 0;
+    text-align: left;
+}
+
+.about-us {
+    max-width: 800px;
+    margin: auto;
+
+}
+
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px 0px;
+    align-items: center;
+
+}
+
+.about-heading {
+    font-family: var(--fancy-font);
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+p {
+    max-width: 30ch;
+}
+
+.img {
+    border-radius: 50%;
+    margin: auto;
+    height: 200px;
+    width: 200px;
+    background: no-repeat url('../assets/images//bgs/form1.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.clio.img {
+    background: no-repeat url('../assets/images/profile.jpeg');
+    background-position: center;
+    background-size: cover;
+}
+.mark.img {
+    background: no-repeat url('../assets/images/mark.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+
+.me-desc.last {
+    text-align: right;
+}

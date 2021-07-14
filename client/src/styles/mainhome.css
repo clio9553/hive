@@ -1,0 +1,47 @@
+.home-main {
+  text-align: left;
+  min-height: 100vh;
+}
+
+.main-row {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.main-drawer {
+  flex-basis: 20%;
+  padding: 3rem 0;
+  font-size: 1.2rem;
+}
+
+.drawer-title {
+  background-color: var(--dark-color);
+  padding: 20px 15px;
+  border-radius: 0 50px 50px 0;
+  color: var(--accent-color);
+  font-size: 1.3rem;
+}
+
+.drawer-list {
+  margin-left: 30px;
+  list-style-type: none;
+}
+
+.drawer-list-item {
+  padding: 15px 0 10px 30px;
+  border-left: 3px solid;
+  text-transform: capitalize;
+  border-color: var(--light-grey-color);
+  transition: border-color 250ms ease-out;
+  cursor: pointer;
+}
+
+.drawer-list-item.active {
+  border-color: var(--accent-color);
+}
+
+.main-content {
+  flex: 1;
+  padding: 3rem 20px;
+}

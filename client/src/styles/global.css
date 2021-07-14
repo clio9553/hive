@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto:wght@300&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Abel&family=Baloo+2&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Hanalei&display=swap');
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  --dark-color: #000;
+  --accent-color: #ff165d;
+  --trans-accent-color: #ff165da8;
+  --light-grey-color: #eeeeee;
+  --dark-grey-color: #393e46;
+  --trans-black: #0000008e;
+  --heading-font: "Playfair Display", serif;
+  --body-font: "Abel", sans-serif;
+  --heading2-font: "Roboto", sans-serif;
+  --body-font: "Baloo", sans-serif;
+  --fancy-font: "Sacramento", cursive;
+  --fancy2-font:'Hanalei', cursive;
+}
+body {
+  width: 100%;
+  min-height: 100vh;
+  font-family: var(--body-font);
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: #3f3844;
+  background-color: var(--light-grey-color);
+  line-height: 1.2;
+  text-align: center;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+ 
+a {
+  text-decoration: none;
+}
+a.inline-link{
+  color: var(--accent-color);
+}
+p {
+  max-width: 60ch;
+}
+
+h1 {
+  
+  font-weight: 300;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--heading2-font);
+  color: black;
+  font-weight: 300 !important;
+}
+hr.body-hr {
+  background-color: transparent;
+  width: 10%;
+  margin: 50px auto;
+  border: none;
+  border-bottom: 10px dotted var(--dark-grey-color);
+}
+/* ! containers */
+.small-container {
+  max-width: 1100px;
+  margin: 5rem auto;
+}
+.small-container-no-padding {
+  max-width: 1100px;
+}
+
+/* !buttons */
+.cluster-outline-button {
+  
+  border: 2px solid;
+  border-color: var(--dark-color);
+  padding: 12px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  text-transform: capitalize;
+  color: var(--dark-color);
+  background-color: transparent;
+  transition: all 500ms ease-out;
+}
+.cluster-outline-button.accent {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+.cluster-outline-button:hover {
+  background-color: var(--dark-color);
+  color: white;
+}
+.cluster-outline-button.accent:hover {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+.cluster-lg-button {
+  width: 55%;
+  border: none;
+  padding: 15px 20px;
+  margin: 20px auto;
+  border-radius: 5px;
+  text-decoration: none;
+  text-transform: capitalize;
+  color: white;
+  background-color: var(--accent-color);
+  transition: all 500ms ease-out;
+}
+
+/* !titles */
+.page-title{
+  max-width: 800px;
+  margin: auto;
+  font-size: 4rem;
+  text-align: left;
+  font-family: var(--fancy-font);
+}

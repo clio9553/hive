@@ -1,0 +1,51 @@
+/* modal forms */
+
+
+.form-title {
+  font-size: 4rem;
+  font-family: "Sacramento", cursive;
+  font-weight: 300;
+}
+.actual-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  color: var(--accent-color);
+  font-family: var(--heading-font);
+  text-align: left;
+  padding: 12px 20px;
+  font-size: 1.4rem;
+}
+
+input {
+  border: none;
+  outline: none;
+}
+
+.input {
+  display: block;
+  margin: 15px auto;
+  min-width: 350px !important;
+  font-size: 1.2rem;
+  border-bottom: 1.2px solid;
+  border-color: white;
+  padding: 12px 20px;
+  text-decoration: none;
+  color: #fff;
+  transition: border-color 500ms ease-out;
+  background-color: transparent;
+}
+input.input.trans {
+  background-color: transparent;
+}
+
+input.input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+input::placeholder {
+  color: #ffffffb9;
+  
+}

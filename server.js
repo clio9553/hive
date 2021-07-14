@@ -12,7 +12,7 @@ const app = express();
 // constants
 const port = process.env.PORT || 8080;
 const dbUrl = process.env.DB_URL;
-const buildPath = path.join(__dirname, "hive-react/build");
+const buildPath = path.join(__dirname, "client/build");
 
 // ** middleware **
 app.use(morgan("dev"));

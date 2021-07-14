@@ -1,0 +1,23 @@
+.splash {
+
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.name {
+    margin: none;
+    color: white;
+    font-family: var(--fancy2-font);
+    font-size: 10rem;
+}

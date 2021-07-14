@@ -1,0 +1,60 @@
+.post-preview-container {
+  height: 200px;
+  width: 80%;
+  margin: 20px auto;
+  cursor: pointer;
+}
+
+.post-preview-desc {
+  text-align: center;
+  display: flex;
+  column-gap: 30px;
+}
+
+.post-preview-desc .value {
+  font-weight: bold;
+  font-weight: 1.5rem;
+}
+
+.post-preview-desc .desc {
+  font-weight: lighter;
+  text-transform: lowercase;
+  font-weight: .8rem !important;
+
+}
+
+.post-preview-stuff {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+a {
+  color: inherit;
+}
+
+.post-preview-row {
+  display: flex;
+  column-gap: 20px;
+}
+
+.post-preview-media {
+  flex-basis: 25%;
+}
+
+.post-preview-words {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+}
+
+.post-preview-title {
+  color: black;
+  font-weight: bold;
+  font-size: 1.6rem;
+  font-family: var(--heading-font);
+}
+
+.post-preview-inventors {
+  font-style: italic;
+}

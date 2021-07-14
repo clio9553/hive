@@ -1,0 +1,134 @@
+/* categorys */
+
+
+.categories-section {
+    height: 80vh;
+    background: url("../assets/images/bgs/landing3.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+    background-color: #554a4a;
+}
+
+.category-row {
+    display: flex;
+    
+
+}
+
+.category-words {
+    flex-basis: 25%;
+    color: #eee;
+    text-align: left;
+    padding: 50px 30px;
+}
+
+.cat-title {
+    color: #eee;
+    font-family: var(--fancy-font);
+    font-size: 4rem;
+}
+
+.category-cards {
+    display: flex;
+    gap: 50px;
+    flex: 1 1;
+   margin-top:10vh;
+}
+
+.category-card {
+    height: 110%;
+    width: 120px;
+    background-color: white;
+    position: relative;
+}
+
+.category-card.card1 {
+    bottom: -50px;
+}
+
+.category-card.card2 {
+    bottom: -20px;
+}
+
+.category-card.card3 {
+    bottom: 0;
+}
+
+
+
+.category-card.card4 {
+    bottom: -20px;
+}
+
+.category-card.card5 {
+    bottom: -50px;
+}
+
+.category-link {
+    text-transform: capitalize;
+    font-family: var(--heading-font);
+    color: white;
+    bottom: -30%;
+}
+
+.category-card:hover .category-link {
+    color: white;
+    bottom: -30%;
+}
+
+.category-card:hover .category-link:after {
+    background-color: crimson;
+    left: -40%;
+}
+
+.category-card:hover .category-arrow {
+    transform: translateX(2px);
+}
+
+.category-link {
+    transform: rotate(-90deg);
+    color: var(--dark-color);
+    bottom: -50%;
+    position: relative;
+    z-index: 1;
+    transition: all 0.5s ease-out;
+}
+
+.category-link:after {
+    position: absolute;
+    content: "";
+    width: 250%;
+    height: 150%;
+    top: 50%;
+    left: 0;
+    transform: translate(10%, -50%);
+    background-color: transparent;
+    z-index: -1;
+    transition: all 0.5s ease-out;
+}
+
+.category-card::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    left: 10%;
+    bottom: -9%;
+    background-color: transparent;
+    border: 1.5px crimson solid;
+}
+
+.category-arrow {
+    position: relative;
+    top: 70%;
+    left: 50%;
+    z-index: 1;
+    transform: translateX(-30%);
+    transition: all 0.5s ease-out;
+}
+
+.category-words {
+    flex-basis: 25%;
+}
