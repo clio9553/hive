@@ -24,7 +24,7 @@ app.use("/api", api);
 app.get("*", (_, res) => {
   res.sendFile(path.join(buildPath, "index.html"));
 });
-await mongoose
+mongoose
   .connect(dbUrl, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
