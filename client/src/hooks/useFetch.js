@@ -12,7 +12,6 @@ function useFetch(url) {
       .then((res) => {
         if (res.ok) {
           res.json().then((data) => {
-            console.log(data);
             setIsfetching(false);
             setData(data);
           });

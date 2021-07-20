@@ -1,13 +1,21 @@
 .post-preview-container {
   height: 200px;
-  width: 80%;
+  width: 70%;
   margin: 20px auto;
   cursor: pointer;
+
 }
 
 .post-preview-desc {
   text-align: center;
   display: flex;
+  column-gap: 35px;
+}
+
+.post-preview-desc.odd {
+  text-align: center;
+  display: flex;
+  justify-content: flex-end;
   column-gap: 30px;
 }
 
@@ -17,7 +25,7 @@
 }
 
 .post-preview-desc .desc {
-  font-weight: lighter;
+  font-weight: 400;
   text-transform: lowercase;
   font-weight: .8rem !important;
 
@@ -25,8 +33,21 @@
 
 .post-preview-stuff {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  row-gap: 10px;
+  align-items: left;
+}
+
+.post-preview-date {
+  display: inline-block;
+  font-style: italic;
+}
+
+.odd > .post-preview-stuff {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  align-items: right;
 }
 
 a {
@@ -35,7 +56,12 @@ a {
 
 .post-preview-row {
   display: flex;
-  column-gap: 20px;
+  column-gap: 30px;
+}
+
+.post-preview-row.odd {
+  flex-direction: row-reverse;
+  text-align: right;
 }
 
 .post-preview-media {

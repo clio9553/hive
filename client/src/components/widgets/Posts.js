@@ -25,7 +25,7 @@ function Posts({ category }) {
                 break;
             }
             return pass;
-          }).map(post_ => <Post post={post_} key={post_._id} />)
+          }).map((post_, index) => <Post post={post_} key={post_._id} index={index} />)
         ) : (
           <p>There are no posts yet!</p>
         );

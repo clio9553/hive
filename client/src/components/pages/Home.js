@@ -31,7 +31,7 @@ class Home extends Component {
       <div>
         <Landing />
         <Navigation />
-        <Categories categories={categories} handleCategory={this.handleCategory} />
+        <Categories categories={categories} handleCategory={(cat)=>this.handleCategory(cat)} />
         <MainHome category={this.state.category} />
         <About  />
       </div>

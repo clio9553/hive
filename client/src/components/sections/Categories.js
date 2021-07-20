@@ -18,7 +18,7 @@ function Categories({ categories, handleCategory }) {
                         return (
                             <div className={cat_class}
                                 key={i}
-                                onClick={(cat) => handleCategory(cat)} >
+                                onClick={() => handleCategory(cat)} >
 
                                 <h1 className="category-link">{cat}</h1>
 

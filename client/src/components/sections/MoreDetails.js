@@ -44,7 +44,7 @@ function MoreDetails({ post, isLoading }) {
     <section className="details-section">
       {loading ? <HiveLoader isFull={true} /> : <div className="details-container">
         <Link to='/' className="back-button"  >
-          <FiChevronLeft size="2rem"
+          <FiChevronLeft size="1.5rem"
           />
         </Link>
         <div className="date"><p>{date.toDateString()}</p></div>
@@ -52,8 +52,9 @@ function MoreDetails({ post, isLoading }) {
           <h1 className="project-title">{post.title}</h1>
         </div>
         <div className='banner' style={HeaderImage} ></div>
+        
         <div className="details-snippet">
-          {post.snippet}
+          <p>"{post.snippet}"</p>
         </div>
         <div className="details-video">
           <VideoPlayer className="actual-video"
