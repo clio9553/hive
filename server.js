@@ -24,6 +24,7 @@ app.use("/api", api);
 app.get("*", (_, res) => {
   res.sendFile(path.join(buildPath, "index.html"));
 });
+
 mongoose
   .connect(dbUrl, {
     useNewUrlParser: true,
@@ -36,10 +37,8 @@ mongoose
     // start server
     app.listen(port, async () => {
       console.log(`Server is running on ${port}`);
-
     });
   })
   .catch((err) => {
     console.log(err.message);
   });
-
