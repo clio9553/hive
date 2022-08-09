@@ -6,7 +6,7 @@ function Navigation() {
     <nav>
       <div className="nav-bar">
         {/* <div className="nav-image"></div> */}
-        <h1 className="site-name">Hive</h1>
+        <h1 className="site-name">Invesite</h1>
         <ul className="nav-list">
           <li className="nav-item">
             <Link to="/" className="nav-link">

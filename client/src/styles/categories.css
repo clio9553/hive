@@ -3,7 +3,7 @@
 
 .categories-section {
     height: 80vh;
-    background: url("../assets/images/bgs/landing3.jpg");
+    background: url("../assets/images/bgs/landing4.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -89,7 +89,7 @@
 }
 
 .category-link {
-    transform: rotate(-90deg);
+    transform: rotate(0deg);
     color: var(--dark-color);
     bottom: -50%;
     position: relative;

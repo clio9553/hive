@@ -41,16 +41,12 @@ p {
     background-size: cover;
 }
 
-.clio.img {
-    background: no-repeat url('../assets/images/profile.jpeg');
+.mck.img {
+    background: no-repeat url('../assets/images/mck.jpg');
     background-position: center;
     background-size: cover;
 }
-.mark.img {
-    background: no-repeat url('../assets/images/mark.jpg');
-    background-position: center;
-    background-size: cover;
-}
+
 
 
 .me-desc.last {

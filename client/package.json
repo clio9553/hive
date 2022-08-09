@@ -11,7 +11,7 @@
     "react-icons": "^4.2.0",
     "react-intersection-observer": "^8.32.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.3",
+    "react-scripts": "^5.0.1",
     "video.js": "^7.13.3",
     "videojs-react-enhanced": "^0.3.1",
     "web-vitals": "^1.1.2"
@@ -21,9 +21,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
+    
   },
-   "engines": {
-    "node": "14.16.0"
+  "engines": {
+    "node": "14.6.0"
   },
   "proxy": "http://localhost:8080",
   "eslintConfig": {

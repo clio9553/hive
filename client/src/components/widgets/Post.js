@@ -24,21 +24,13 @@ function Post({ post, index }) {
           <div className="post-preview-words">
             <div className="post-preview-stuff">
               <div className="post-preview-title">{post.title}</div>
-              <div className="post-preview-date">{date.toDateString()}</div>
+              
             </div>
             <div className="snippet"><p>{post.snippet}</p> </div>
             <div className={des_c}>
               <div className="likes">
                 <div className="value">0</div>
                 <div className="desc">Likes</div>
-              </div>
-              <div className="views">
-                <div className="value">0</div>
-                <div className="desc">Views</div>
-              </div>
-              <div className="date">
-                <div className="value">0</div>
-                <div className="desc">dislikes</div>
               </div>
             </div>
           </div>

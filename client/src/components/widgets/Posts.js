@@ -15,16 +15,21 @@ function Posts({ category }) {
       child =
         posts?.length > 0 ? (
           posts.filter((post) => {
-            let pass;
-            switch (category) {
-              case 'all technologies':
-                pass = true;
-                break;
-              default:
-                pass = post.category === category;
-                break;
+            // let pass;
+            // switch (category) {
+            //   case 'all technologies':
+            //     pass = true;
+            //     break;
+            //   default:
+            //     pass = post.category === category;
+            //     break;
+            // }
+            // return pass;
+            if(category === "all technologies") {
+              return true
+            }else{
+              return post.category === category
             }
-            return pass;
           }).map((post_, index) => <Post post={post_} key={post_._id} index={index} />)
         ) : (
           <p>There are no posts yet!</p>

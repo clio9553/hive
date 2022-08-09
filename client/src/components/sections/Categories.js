@@ -8,7 +8,7 @@ function Categories({ categories, handleCategory }) {
                 <div className="category-words">
                     <h1 className="cat-title">Catacombs</h1>
                     <p className="cat-desc" >
-                        We have the most <strong>versatile</strong>  range of categories that will suite most if not all who wish to be part of the <strong>HIVE</strong>.
+                        We have the most <strong>versatile</strong>  range of categories that will suite most if not all who wish to be part of the <strong>INVESITE</strong>.
                         We intend to give innovators a headstart while providing inventors a platform to source for their next <strong>Honey Pot.</strong>
                     </p>
                 </div>

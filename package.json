@@ -1,9 +1,10 @@
 {
-  "name": "hive-project",
+  "name": "invesite",
   "version": "1.0.0",
-  "description": "A website for inventors by inventors",
+  "description": "Where innovators meet",
   "main": "server.js",
   "scripts": {
+    " serve": "nodemon server .js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
@@ -20,5 +21,8 @@
     "react-markdown": "^6.0.2",
     "react-spinners": "^0.11.0",
     "styled-components": "^5.3.0"
+  },
+  "devDependencies": {
+    "node": "^18.5.0"
   }
 }

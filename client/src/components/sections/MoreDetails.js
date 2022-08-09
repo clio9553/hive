@@ -4,7 +4,7 @@ import VideoPlayer from "videojs-react-enhanced";
 import "video.js/dist/video-js.css";
 import ReactMarkdown from "react-markdown";
 import "../../styles/details.css";
-import bg from '../../assets/images/bgs/landing3.jpg';
+import bg from '../../assets/images/bgs/form2.jpg';
 
 import HiveLoader from "../widgets/HiveLoader";
 import { Link } from "react-router-dom";

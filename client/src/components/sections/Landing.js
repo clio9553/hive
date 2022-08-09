@@ -5,8 +5,7 @@ function Landing() {
     <section className="landing-section">
       <div className="landing">
         <h1 className="landing-title">
-          <span className="the">The </span>
-          <span className="hive"> Hive</span>
+          <span className="hive"> INVESITE</span>
         </h1>
       </div>
     </section>

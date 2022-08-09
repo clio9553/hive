@@ -52,9 +52,9 @@ class NewPost extends Component {
       this.setState({ isLoading: false });
       res.json().then((resp) => {
         if (res.status === 200) {
-          alert("Project added to HIVE succesfully!");
+          alert("Project added to INVESITE succesfully!");
         } else {
-          alert("Failed to add project to HIVE!!\nError: " + resp.message);
+          alert("Failed to add project to INVESITE!!\nError: " + resp.message);
         }
       })
     }
@@ -193,7 +193,7 @@ class NewPost extends Component {
               How much do you know about <strong>markdown editors</strong>? If
               your answer was <strong>"a lot👌"</strong>, then you're in for a
               treat. If your answer was <strong>"very little😢"</strong>, worry
-              not! We are a <strong>hive</strong> remember? We got you! All you
+              not! We are a <strong>invesite</strong> remember? We got you! All you
               gotta do is ...
               <a
                 className="inline-link"
@@ -275,7 +275,7 @@ class NewPost extends Component {
               </div>
               <p>
                 Now that that is over, all thats is left to do is hit the{" "}
-                <strong>submit</strong> button and let the <strong>HIVE</strong>{" "}
+                <strong>submit</strong> button and let  <strong>INVESITE</strong>{" "}
                 work its magic!!!🎉🎉🎉🌟✨{" "}
               </p>
               {isLoading ? (

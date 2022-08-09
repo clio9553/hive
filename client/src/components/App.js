@@ -7,13 +7,17 @@ import "../styles/global.css";
 import PostDetails from "./pages/PostDetails";
 import NewPost from "./pages/NewPost";
 import Splash from "./pages/Splash";
+import Login from "./pages/Login";
+
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       isLoading: true,
+      isLoggedin: false,
     }
+    this.handleSignIn = this.handleSignIn.bind(this)
   }
   componentDidMount() {
     setTimeout(() => {
@@ -22,8 +26,13 @@ class App extends Component {
       })
     }, 5000);
   }
+
+  handleSignIn() {
+    this.setState({ ...this.state, isLoggedin: true })
+  }
   render() {
-    return this.state.isLoading ? (<Splash />) : (
+    // return <Login />
+    return this.state.isLoading ? (<Splash />) : this.state.isLoggedin ? (
       <Router>
         <Switch>
           <Route exact path="/create-post" component={NewPost} />
@@ -32,7 +41,7 @@ class App extends Component {
         </Switch>
         <Footer />
       </Router>
-    );
+    ) : <Login loginCallback={this.handleSignIn} />
   }
 }
 
