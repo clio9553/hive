@@ -1,6 +1,5 @@
 import React from "react";
 import useFetch from "../../hooks/useFetch";
-import HiveLoader from "./HiveLoader";
 import Post from "./Post";
 
 function Posts({ category }) {

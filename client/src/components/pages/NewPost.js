@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import DropDown from "../widgets/DropDown";
 import ReactMarkdown from "react-markdown";
-import { FiAirplay, FiCalendar, FiCamera, FiChevronLeft, FiCpu, FiFeather, FiInstagram, FiKey, FiScissors, FiTag, FiType } from 'react-icons/fi'
+import { FiAirplay, FiChevronLeft, FiCpu, FiFeather, FiInstagram, FiScissors, FiType } from 'react-icons/fi'
 import "../../styles/new_post.css";
 import { Link } from "react-router-dom";
 
@@ -27,14 +27,14 @@ class NewPost extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   handleChange(e) {
-    this.setState((prev) => {
+    this.setState(() => {
       return {
         [e.target.name]: e.target.value,
       };
     });
   }
   handleSelect(name, option) {
-    this.setState((prev) => {
+    this.setState(() => {
       return {
         [name]: option,
       };

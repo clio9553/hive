@@ -1,4 +1,4 @@
-import React, { Component, useEffect, useState } from "react";
+import React, {  useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Footer from "./core_widgets/Footer";
 import Home from "./pages/Home";
@@ -12,7 +12,7 @@ import { AuthWrapper } from "./pages/AuthWrapper";
 
 const App = () => {
 
-  const [isLoading, setisLoading] = useState(false);
+  const [isLoading, setisLoading] = useState(true);
   const [isLoggedin, setisLoggedin] = useState(false)
 
   useEffect(() => {

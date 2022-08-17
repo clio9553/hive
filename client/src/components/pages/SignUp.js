@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import '../../styles/signup.css'
 import { BiUser } from "react-icons/bi"
 import { FiEye, FiEyeOff, FiKey } from "react-icons/fi";

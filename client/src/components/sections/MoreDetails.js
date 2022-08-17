@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import "../../styles/details.css";
-import bg from '../../assets/images/bgs/form2.jpg';
-
 import HiveLoader from "../widgets/HiveLoader";
 import { Link } from "react-router-dom";
 import { FiChevronLeft } from "react-icons/fi";
@@ -12,20 +10,15 @@ import ReactPlayer from 'react-player/youtube'
 function MoreDetails({ post, isLoading }) {
   const [loading, setloading] = useState(true)
   useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" })
+  }, [])
+
+  useEffect(() => {
     setTimeout(() => {
       setloading(false)
     }, 3000);
-
   }, [loading])
-  const playerOptions = {
-    src: post.videoUrl,
-    controls: true,
-    autoplay: false,
-  };
-  const videojsOptions = {
-    fluid: true,
-    poster: bg,
-  };
+
 
   const HeaderImage = {
     margin: 'auto',
