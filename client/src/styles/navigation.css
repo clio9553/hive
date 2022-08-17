@@ -2,8 +2,9 @@ nav {
   width: 100%;
   position: sticky;
   top: 0;
-  background-color: var(--dark-color);
-  color: #ccc;
+  /* background-color: var(--dark-color); */
+  background: white;
+  color: inherit;
   z-index: 100;
 }
 
@@ -11,26 +12,55 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2px 10px;
+  padding: 20px 30px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.site-name {
-  color: white;
+.nav-left {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+.site-name.nav {
+  color: inherit;
   font-size: 2rem;
-  font-family: 'Sacramento', cursive;
+  font-family: "Sacramento", cursive;
+  font-weight: 200!important;
+  padding-top: 3px;
 }
 
 .nav-list {
   display: flex;
+  column-gap: 10px;
   list-style-type: none;
 }
 
 .nav-item {
   margin: 0 5px;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 
 .nav-link {
   color: inherit;
+  font-family: "Abel", cursive;
+  font-size: 1.1em;
   text-decoration: none;
+  cursor: pointer;
+  position: relative;
+}
+.nav-link::after{
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 0;
+  background: var(--accent-color);
+  bottom: -5px;
+  border-radius: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: width 500ms ease-out;
+}
+.nav-link:hover::after{
+  width: 25%;
 }

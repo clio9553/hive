@@ -1,0 +1,83 @@
+.sign-up-page {
+  height: 100vh;
+  width: 100%;
+  background: no-repeat url("../assets/images/bgs/landing.svg");
+  background-position: center;
+  background-size: cover;
+}
+
+.sign-up-form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+
+  /* filter: blur(2px); */
+  padding: 50px;
+  border-radius: 10px 50px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.224);
+}
+.sign-title {
+  font-size: 30px;
+  font-family: "Sacramento", cursive;
+  margin-bottom: 30px;
+}
+
+.sign-input {
+  text-align: left;
+  margin: 20px auto;
+}
+.sign-icon {
+  margin-bottom: 10px;
+}
+.input-label {
+  display: none;
+}
+.input-input {
+  background: rgb(255, 255, 255);
+  border: 2px solid var(--accent-color);
+  display: flex;
+  align-items: center;
+  padding: 10px 25px;
+  border-radius: 100px;
+  box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.131),
+    -2px -2px 2px 0 rgba(255, 255, 255, 0.443);
+}
+.input-input > input {
+  outline: none;
+  background: transparent;
+  padding: 10px 15px;
+  padding-left: 20px;
+  min-width: 300px;
+  font-size: inherit;
+}
+.eye {
+  cursor: pointer;
+}
+.form-button {
+  border: 2px solid var(--accent-color);
+  width: max-content;
+  margin: 30px auto 10px;
+  padding: 15px 40px;
+  border-radius: 100px;
+  color: var(--accent-color);
+  cursor: pointer;
+}
+.form-button:hover {
+  color: white;
+  background: var(--accent-color);
+}
+
+.forgot-password {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 10px;
+}
+.forgot-password span {
+  color: var(--accent-color);
+  cursor: pointer;
+}

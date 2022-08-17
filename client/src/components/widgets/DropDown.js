@@ -2,9 +2,9 @@ import "../../styles/dropdown.css";
 
 import React, { useState } from "react";
 
-function DropDown({ onChange, options, text}) {
+function DropDown({ onChange, options, text, icon }) {
   const [isActive, setIsActive] = useState(false);
-  const [value, setValue] = useState(options[0]);
+  const [label, setLabel] = useState(options[0].label);
   let ul_class = "dropdown-options";
   if (!isActive) {
     ul_class = ul_class + " hide";
@@ -12,14 +12,15 @@ function DropDown({ onChange, options, text}) {
   return (
     <div className="dropdown-container">
       <div
-        className="dropdown-select"
+        className="dropdown-select outline"
         onClick={() => {
           setIsActive(!isActive);
         }}
       >
         <div className="dropdown-value">
+          {icon && icon}
           {text && `${text}: `}
-          <p className="drop-selected" > {value}</p>
+          <p className="drop-selected" > {label}</p>
         </div>
         <div className="dropdown-arrow"></div>
       </div>
@@ -33,16 +34,16 @@ function DropDown({ onChange, options, text}) {
           }
           return (
             <li
-              key={index}
-              value={option}
+              key={option.label}
+              value={option.value}
               className={name}
               onClick={() => {
-                setValue(option);
+                setLabel(option.label);
                 setIsActive(false);
-                onChange(option);
+                onChange(option.value);
               }}
             >
-             {option}
+              {option.label}
             </li>
           );
         })}

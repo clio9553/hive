@@ -3,7 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Abel&family=Baloo+2&display=swap");
 
 @import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Hanalei&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Hanalei&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -11,37 +11,38 @@
 }
 :root {
   --dark-color: #000;
-  --accent-color: #ff165d;
+  --accent-color: #fe6f9b;
   --trans-accent-color: #ff165da8;
   --light-grey-color: #eeeeee;
   --dark-grey-color: #393e46;
   --trans-black: #0000008e;
+  --body-color: #3f3844;
   --heading-font: "Playfair Display", serif;
   --body-font: "Abel", sans-serif;
   --heading2-font: "Roboto", sans-serif;
-  --body-font: "Baloo", sans-serif;
+  --body-font: "Roboto", sans-serif;
   --fancy-font: "Sacramento", cursive;
-  --fancy2-font:'Hanalei', cursive;
+  --fancy2-font: "Hanalei", cursive;
 }
 body {
   width: 100%;
   min-height: 100vh;
   font-family: var(--body-font);
   font-weight: 400;
-  font-size: 18px;
-  color: #3f3844;
-  background-color: var(--light-grey-color);
+  /* font-size: 100px; */
+  color: --body-color;
+  background-color: white;
   line-height: 1.2;
   text-align: center;
 }
 body::-webkit-scrollbar {
   display: none;
 }
- 
+
 a {
   text-decoration: none;
 }
-a.inline-link{
+a.inline-link {
   color: var(--accent-color);
 }
 p {
@@ -49,7 +50,6 @@ p {
 }
 
 h1 {
-  
   font-weight: 300;
 }
 
@@ -59,6 +59,7 @@ h3 {
   font-family: var(--heading2-font);
   color: black;
   font-weight: 300 !important;
+  margin: 0!important;
 }
 hr.body-hr {
   background-color: transparent;
@@ -78,7 +79,6 @@ hr.body-hr {
 
 /* !buttons */
 .cluster-outline-button {
-  
   border: 2px solid;
   border-color: var(--dark-color);
   padding: 12px 20px;
@@ -115,10 +115,38 @@ hr.body-hr {
 }
 
 /* !titles */
-.page-title{
+.page-title {
   max-width: 800px;
   margin: auto;
   font-size: 4rem;
   text-align: left;
   font-family: var(--fancy-font);
+}
+
+.input-label {
+  display: none;
+}
+.input-input {
+  background: rgb(255, 255, 255);
+  border: 2px solid var(--accent-color);
+  display: flex;
+  align-items: center;
+  padding: 10px 25px;
+  border-radius: 100px;
+  box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.131),
+    -2px -2px 2px 0 rgba(255, 255, 255, 0.443);
+}
+.input-input > input {
+  outline: none;
+  background: transparent;
+  padding: 10px 15px;
+  padding-left: 20px;
+  min-width: 300px;
+  font-size: inherit;
+}
+
+input::placeholder{
+  font-family: inherit;
+  font-weight: inherit;
+  color: var(--body-color);
 }

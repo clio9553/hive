@@ -1,8 +1,10 @@
 import React from 'react'
+import { forwardRef } from 'react'
 import '../../styles/about.css'
-function About() {
+
+const About = forwardRef((props, ref) => {
     return (
-        <section className="about-section"  >
+        <section ref={ref} className="about-section"  >
             <div className="about-us">
                 <h1 className="about-heading">
                     Who am I?
@@ -12,15 +14,13 @@ function About() {
                     <div className="me-desc">
                         <h2 className="title">Mcknight Kuria</h2>
                         <p>
-                            Web app developer in  <strong>React Js </strong> .
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint quis ullam corrupti, nobis delectus eligendi dolores obcaecati ipsa autem eos porro in nam, explicabo id dicta officiis debitis iste repellat!
                         </p>
                     </div>
-                    
-                    
                 </div>
             </div>
         </section>
     )
-}
+})
 
 export default About

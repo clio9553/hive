@@ -7,7 +7,8 @@ function Posts({ category }) {
   let child;
   const { data: posts, error, isError, isFetching } = useFetch("api/posts");
   if (isFetching) {
-    child = <HiveLoader isFull={true} />
+    // child = <HiveLoader isFull={true} />
+    child = <p>Loading..</p>
   } else {
     if (isError) {
       child = <p>{error}</p>;
@@ -15,20 +16,11 @@ function Posts({ category }) {
       child =
         posts?.length > 0 ? (
           posts.filter((post) => {
-            // let pass;
-            // switch (category) {
-            //   case 'all technologies':
-            //     pass = true;
-            //     break;
-            //   default:
-            //     pass = post.category === category;
-            //     break;
-            // }
-            // return pass;
-            if(category === "all technologies") {
-              return true
-            }else{
-              return post.category === category
+            switch (category) {
+              case 'at':
+                return true;
+              default:
+                return post.category === category;
             }
           }).map((post_, index) => <Post post={post_} key={post_._id} index={index} />)
         ) : (

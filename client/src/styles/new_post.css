@@ -3,6 +3,18 @@
   padding-top: 50px;
 }
 
+.new-header{
+  /* background: blue; */
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.new-page-title{
+  font-size: 50px;
+  font-family: var(--fancy2-font);
+}
+
 .input-desc {
   max-width: 800px;
   margin: 30px auto;
@@ -17,11 +29,11 @@
 
 .back-button {
   margin: 10px 20px;
-color:  var(--accent-color);
+  color: var(--accent-color);
   height: 60px;
   width: 60px;
   border-radius: 50%;
-  border: 2px solid #333;
+  border: 2px solid var(--accent-color);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,14 +41,19 @@ color:  var(--accent-color);
 }
 
 .input-desc-title {
-  color: black;
-  font-family: var(--heading2-font);
-  margin: 10px 0;
+  color: rgb(0, 0, 0);
+  font-family: var(--fancy-font);
+  margin: 10px auto;
+  font-size: 40px;
 }
 
 .form {
   width: 100%;
-  background-color: black;
+  margin: 50px 0;
+  padding: 50px 0;
+  background: #fff;
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
 }
 
 .form .form-1 {
@@ -45,6 +62,7 @@ color:  var(--accent-color);
   margin: auto;
   padding: 60px 0;
   grid-template-columns: 1fr 1fr;
+  gap: 20px;
 }
 
 .form .form-2 {
@@ -77,35 +95,24 @@ textarea {
 }
 
 textarea {
-  border: 1.2px solid var(--trans-accent-color);
-  border-radius: 20px;
+  border: 2px solid var(--trans-accent-color);
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: inherit;
 }
 
 .input {
   display: block;
   margin: 15px 0;
   min-width: 350px !important;
-  font-size: 1.2rem;
-  border-bottom: 1.2px solid;
   border-color: var(--trans-accent-color);
   padding: 12px 20px;
   text-decoration: none;
-  color: #fff;
+  /* color: #fff; */
   transition: border-color 500ms ease-out;
   background-color: transparent;
-}
-
-input.input.trans {
-  background-color: transparent;
-}
-
-input.input:focus {
-  outline: none;
-  border-color: var(--accent-color);
-}
-
-input::placeholder {
-  color: rgba(204, 204, 204, 0.651);
+  box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.131),
+    -2px -2px 2px 0 rgba(0, 0, 0, 0.131);
 }
 
 .desc-ul {
@@ -151,9 +158,38 @@ input::placeholder {
 
 .mark-down-page {
   background-color: white;
-  border: 1px black solid;
-  border-radius: 0;
-  box-shadow: 12px 12px 0 0  var(--trans-accent-color);
+  border: 1px dolid var(--accent-color);
+  border-radius: 20px;
+  box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.131),
+    -2px -2px 2px 0 rgba(0, 0, 0, 0.131);
+  /* box-shadow: 12px 12px 0 0 var(--trans-accent-color); */
   margin: 20px auto;
   padding: 20px;
+  color: inherit;
+}
+
+.input-desc > p {
+  /* color: blue; */
+  line-height: 1.4;
+  font-size: 1.1rem;
+}
+
+.desc-special {
+  position: relative;
+  z-index: 1;
+  margin: 0 8px;
+}
+.desc-special::after {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 110%;
+  height: 120%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  border-radius: 5px;
+
+  background: #e5e5e5;
 }

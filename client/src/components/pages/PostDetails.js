@@ -12,11 +12,10 @@ class PostDetails extends Component {
     };
   }
   componentDidMount() {
-    const {
-      match: { params },
-    } = this.props;
+    const id = window.location.pathname.replace("/", "")
 
-    fetch(`api/posts/${params.id}`)
+
+    fetch(`api/posts/${id}`)
       .then((res) => {
         if (res.ok) {
           res.json().then((data) => {

@@ -1,6 +1,7 @@
 .project-title {
-  font-size: 5rem;
+  font-size: 4.5rem;
   font-family: var(--heading-font);
+  margin: 20px auto 30px;
 }
 
 .details-snippet {
@@ -11,18 +12,41 @@
   font-weight: 500;
   font-style: italic;
 }
-.date{
+.date {
   text-align: center;
   display: inline-block;
 }
-.date p{
+.date p {
   display: inline-block;
 }
+.brief-vid-desc {
+  text-align: center;
+}
+.vid-desc-title {
+  font-size: 3.5rem;
+  font-family: var(--fancy-font);
+  color: var(--accent-color);
+}
+.video-prev-words {
+  max-width: 50ch;
+  line-height: 1.4;
+  font-size: 1.2rem;
+}
+
 .details-video {
+  /* aspect-ratio: 16/9; */
   margin: 50px auto 80px;
-  max-width: 800px;
-  height: 450px;
-  background-color: grey;
+  /* max-width: 800px; */
+  /* height: 450px; */
+  /* background-color: grey; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 80px;
+  padding: 100px 0;
+  border-top: 2px solid #e5e5e5;
+  border-bottom: 2px solid #e5e5e5;
 }
 
 .banner {

@@ -1,23 +1,26 @@
 .landing {
   height: 100vh;
   width: 100%;
-  background: no-repeat url("../assets/images/PEBBLES.jpg");
+  background: no-repeat url("../assets/images/bgs/landing.svg");
   /* background-color: var(--accent-color); */
   /* background-blend-mode: multiply; */
   background-position: center;
   background-size: cover;
   /* background-attachment: fixed; */
-  
-  }
+}
 
-.landing-title {
- font-family: var(--fancy2-font);
-  color: white;
-  font-size: 12rem;
+.landing-words {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  text-transform: uppercase;
-  
+  /* text-transform: uppercase; */
+}
+.site-icon{
+  color: var(--accent-color);
+}
+.site-name {
+  font-family: var(--fancy-font);
+  color: white;
+  font-size: 5rem;
 }

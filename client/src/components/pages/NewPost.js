@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import DropDown from "../widgets/DropDown";
 import ReactMarkdown from "react-markdown";
-import { FiChevronLeft } from 'react-icons/fi'
-import { PulseLoader } from "react-spinners";
+import { FiAirplay, FiCalendar, FiCamera, FiChevronLeft, FiCpu, FiFeather, FiInstagram, FiKey, FiScissors, FiTag, FiType } from 'react-icons/fi'
 import "../../styles/new_post.css";
 import { Link } from "react-router-dom";
 
+import { PulseLoader } from "react-spinners";
 class NewPost extends Component {
   constructor() {
     let firstdesc =
@@ -62,18 +62,18 @@ class NewPost extends Component {
   }
   render() {
     const categories = [
-      "general technology",
-      "bio technology",
-      "food technology",
-      "agro technology",
-      "finance technology",
+      { label: "general technology", value: "gt" },
+      { label: "finance technology", value: "ft" },
+      { label: "food technology", value: "ft" },
+      { label: "bio technology", value: "bt" },
+      { label: "agro technology", value: "at" },
     ];
     const phases = [
-      "concept phase",
-      "research phase",
-      "funding phase",
-      "development phase",
-      "complete phase",
+      { label: "concept phase", value: "1" },
+      { label: "research phase", value: "2" },
+      { label: "funding phase", value: "3" },
+      { label: "development phase", value: "4" },
+      { label: "complete phase", value: "5" },
     ];
     const {
       title,
@@ -87,11 +87,12 @@ class NewPost extends Component {
     } = this.state;
     return (
       <section className="new-post-page">
-        <Link to='/' className="back-button"  >
-          <FiChevronLeft size="2rem"
-          />
-        </Link>
-        <h1 className="page-title">The Nursery.</h1>
+        <div className="new-header">
+          <Link to='/' className="back-button"  >
+            <FiChevronLeft size="2rem"
+            />
+          </Link>
+        </div>
         <form
           onSubmit={(e) =>
             this.handleSubmit(e, {
@@ -107,23 +108,22 @@ class NewPost extends Component {
           }
         >
           <div className="input-desc">
-            <h2 className="input-desc-title">Project Basics</h2>
+            <div className="input-desc-title">Project Basics</div>
             <p>
               This is basic information about your project and what it entails.
               Make sure to meet the required standards and of course, make it
-              <strong> interesting.</strong> In any case consult with your{" "}
+              <span className="desc-special"> interesting.</span> In any case consult with your{" "}
               <em>peers</em> and ensure that you have a{" "}
-              <strong>unanimous</strong> decision on the fields below as they
-              are the <strong>selling points</strong> for your project. Happy
-              Hacking!🎉🐱‍👤☕
+              <span className="desc-special">unanimous</span> decision on the fields below as they
+              are the <span className="desc-special">selling points</span> for your project. Happy
+              Hacking!! 🎉🐱
             </p>
           </div>
           <div className="form">
             <div className="form-1">
-              <label className="form-label">
-                Title
+              <div className="input-input">
+                <FiType fontSize={22} />
                 <input
-                  className="input dark"
                   type="text"
                   name="title"
                   value={title}
@@ -132,11 +132,10 @@ class NewPost extends Component {
                   required
                   autoFocus
                 />
-              </label>
-              <label className="form-label">
-                Snippet
+              </div>
+              <div className="input-input">
+                <FiScissors fontSize={22} />
                 <input
-                  className="input dark"
                   type="text"
                   name="snippet"
                   value={snippet}
@@ -144,11 +143,10 @@ class NewPost extends Component {
                   placeholder="Briefly describe your project"
                   required
                 />
-              </label>
-              <label className="form-label">
-                Image URL
+              </div>
+              <div className="input-input">
+                <FiInstagram fontSize={22} />
                 <input
-                  className="input dark"
                   type="text"
                   name="imageUrl"
                   value={imageUrl}
@@ -156,11 +154,11 @@ class NewPost extends Component {
                   placeholder="Paste your image url"
                   required
                 />
-              </label>
-              <label className="form-label">
-                Video URL
+              </div>
+
+              <div className="input-input">
+                <FiAirplay fontSize={22} />
                 <input
-                  className="input dark"
                   type="text"
                   name="videoUrl"
                   value={videoUrl}
@@ -168,32 +166,29 @@ class NewPost extends Component {
                   placeholder="Paste your video Url"
                   required
                 />
-              </label>
+              </div>
+              <DropDown
+                icon={<FiCpu fontSize={22} />}
+                options={categories}
+                onChange={(option) => this.handleSelect('category', option)}
+              />
 
-              <label className="form-label">
-                Category
-                <DropDown
-                  options={categories}
-                  onChange={(option) => this.handleSelect('category', option)}
-                />
-              </label>
-              <label className="form-label">
-                Phase
-                <DropDown
-                  options={phases}
-                  onChange={(option) => this.handleSelect('phase', option)}
-                />
-              </label>
+
+              <DropDown
+                icon={<FiFeather fontSize={22} />}
+                options={phases}
+                onChange={(option) => this.handleSelect('phase', option)}
+              />
             </div>
           </div>
           <div className="input-desc">
-            <h2 className="input-desc-title">Project Description</h2>
+            <div className="input-desc-title">Project Description</div>
             <p>
               Oh well, that was the hard part, smooth sailing from here 😁😁.
-              How much do you know about <strong>markdown editors</strong>? If
-              your answer was <strong>"a lot👌"</strong>, then you're in for a
-              treat. If your answer was <strong>"very little😢"</strong>, worry
-              not! We are a <strong>invesite</strong> remember? We got you! All you
+              How much do you know about <span className="desc-special">markdown editors</span>? If
+              your answer was <span className="desc-special">"a lot 👌"</span>, then you're in for a
+              treat. If your answer was <span className="desc-special">"very little 😢"</span>, worry
+              not! We are a <span className="desc-special">invesite</span> remember? We got you! All you
               gotta do is ...
               <a
                 className="inline-link"
@@ -210,8 +205,8 @@ class NewPost extends Component {
                 champ
               </em>{" "}
               in that sector by now. Try make your project description as{" "}
-              <strong>captivating</strong> as well, the most captivating
-              description in the world😆😆🌟. Also make sure it fully covers the
+              <span className="desc-special">captivating</span> as well, the most captivating
+              description in the world 😆😆🌟. Also make sure it fully covers the
               following about your project:
             </p>
             <br />
@@ -228,12 +223,11 @@ class NewPost extends Component {
           <div className="form">
             <div className="form-2">
               <label className="form-label">
-                Markdown Editor
                 <textarea
                   className="input"
                   name="description"
                   onChange={this.handleChange}
-                  cols="104"
+                  cols="90"
                   rows="20"
                   value={description}
                   required
@@ -242,12 +236,12 @@ class NewPost extends Component {
             </div>
           </div>
           <div className="input-desc" id="output">
-            <h2 className="input-desc-title">Pixie Dust</h2>
+            <div className="input-desc-title">Pixie Dust</div>
             <p>
               I'll admit, what you just wrote is not eye captivating at all fahm
               😆😆,sorry, not sorry. Like I said, I got you! If you believe you
               have done pretty much all that is needed in the{" "}
-              <strong>description editor</strong> or you just want to check how
+              <span className="desc-special">description editor</span> or you just want to check how
               awesome your work is so far,{" "}
               <a href="#output" className="inline-link">
                 well here it is
@@ -260,35 +254,34 @@ class NewPost extends Component {
               <br />
             </p>{" "}
           </div>
-          <div className="grey">
-            <div className="input-desc">
-              <h2 className="input-desc-title">Final Product</h2>
-              <p>
-                Okay! We're done ...Awesome work so far. Below is how your
-                description will appear in the{" "}
-                <strong>project description</strong> page alongside other
-                content like your
-                <strong> video, image , title </strong> e.t.c.
-              </p>{" "}
-              <div className="mark-down-page">
-                <ReactMarkdown children={description} />
-              </div>
-              <p>
-                Now that that is over, all thats is left to do is hit the{" "}
-                <strong>submit</strong> button and let  <strong>INVESITE</strong>{" "}
-                work its magic!!!🎉🎉🎉🌟✨{" "}
-              </p>
-              {isLoading ? (
-                <button className="new-post-btn" type="submit" disabled>
-                  <PulseLoader color='white' />
-                </button>
-              ) : (
-                <button className="new-post-btn" type="submit">
-                  Submit Project
-                </button>
-              )}
-            </div>{" "}
-          </div>
+
+          <div className="input-desc">
+            <div className="input-desc-title">Final Product</div>
+            <p>
+              Okay! We're done ...Awesome work so far. Below is how your
+              description will appear in the{" "}
+              <span className="desc-special">project description</span> page alongside other
+              content like your
+              <span className="desc-special"> video, image , title </span> e.t.c.
+            </p>{" "}
+            <div className="mark-down-page ">
+              <ReactMarkdown children={description} />
+            </div>
+            <p>
+              Now that that is over, all thats is left to do is hit the{" "}
+              <span className="desc-special">submit</span> button and let  <span className="desc-special">INVESITE</span>{" "}
+              work its magic!!!🎉🎉🎉🌟✨{" "}
+            </p>
+            {isLoading ? (
+              <button className="new-post-btn" type="submit" disabled>
+                <PulseLoader color='white' />
+              </button>
+            ) : (
+              <button className="new-post-btn" type="submit">
+                Submit Project
+              </button>
+            )}
+          </div>{" "}
         </form>
       </section>
     );
@@ -296,3 +289,4 @@ class NewPost extends Component {
 }
 
 export default NewPost;
+

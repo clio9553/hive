@@ -1,5 +1,7 @@
 const express = require("express");
 const PostModel = require("../models/PostModel");
+const UserModel = require("../models/UserModel")
+const bcrypt = require("bcrypt")
 const api = express.Router();
 
 api.get("/posts", async (req, res) => {
@@ -9,7 +11,8 @@ api.get("/posts", async (req, res) => {
   } catch (error) {
     console.log(error.message);
     res.status(401).json({
-      message: error.message,    });
+      message: error.message,
+    });
   }
 });
 
@@ -39,7 +42,85 @@ api.post("/create-post", async (req, res) => {
   }
 });
 
-// ? Functions //
+// authentication
+api.post("/sign-up", async (req, res) => {
+  const { username, password } = req.body;
+  // add user to db
+  try {
+    UserModel.findOne({ username }, async function (err, userFound) {
+      if (userFound === null) {
+        // means user does not exist[This is a good thing ✅, means its a new user]
+        const salt = await bcrypt.genSalt(12)
+        const securePassword = await bcrypt.hash(password, salt);
+        const newUser_ = new UserModel({
+          username,
+          password: securePassword
+        })
+        try {
+          let user = await newUser_.save()
+          console.log(`Adding username: ${user.username} with id: ${user._id}to DB`)
+
+        } catch (error) {
+          throw Error(error.message)
+        }
+      } else {
+        // ❌ Means a user with that name already exists[This is bad, means we cant create user with this username]
+        console.log(userFound)
+        res.status(401).json({
+          message: `Username is already in use!`
+        })
+        return;
+      }
+      res.status(200).json({ message: "Authentication successful!" })
+    })
+  } catch (error) {
+    console.log(error.message);
+    res.status(401).json({
+      message: error.message
+    })
+  }
+
+
+})
+
+api.post("/login", (req, res) => {
+  const { username, password } = req.body;
+  // add user to db
+  try {
+    UserModel.findOne({ username }, async function (err, userFound) {
+      if (userFound) {
+        // ✅ User has been found
+        const dbPassword = userFound.password;
+        // 🔎 compare paswords
+        await bcrypt.compare(password, dbPassword).then(isCorrect => {
+          if (isCorrect) {
+            // ✅ passwords match 
+            res.status(200).json({ message: "Authentication successful!" })
+          } else {
+            // ❌ passwords dont match
+            res.status(401).json({
+              message: `Wrong password detected!`
+            })
+            return;
+          }
+        })
+      } else {
+        // ❌ Means a user does not exist 
+        res.status(401).json({
+          message: `User "${username}" does not exist!`
+        })
+        return;
+      }
+    })
+  } catch (error) {
+    console.log(error.message);
+    res.status(401).json({
+      message: error.message
+    })
+  }
+})
+
+
 async function queryPosts() {
   return await PostModel.find()
     .then((posts) => posts)
