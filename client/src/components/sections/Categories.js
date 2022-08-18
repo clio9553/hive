@@ -6,7 +6,7 @@ const Categories = forwardRef(({ categories, handleCategory, selectedCategory },
     return (
         <section ref={ref} className="categories-section">
             <div className="category-row">
-                
+
                 <div className="category-cards">
                     {categories.map(({ label, value }, idx) => {
                         let cat_class = `category-card card${(idx + 1)} ${value === selectedCategory ? "selected" : ""} `;

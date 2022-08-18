@@ -1,4 +1,4 @@
-import React, {  useEffect, useState } from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Footer from "./core_widgets/Footer";
 import Home from "./pages/Home";
@@ -6,20 +6,12 @@ import Home from "./pages/Home";
 import "../styles/global.css";
 import PostDetails from "./pages/PostDetails";
 import NewPost from "./pages/NewPost";
-import Splash from "./pages/Splash";
 import { Toaster } from 'react-hot-toast'
 import { AuthWrapper } from "./pages/AuthWrapper";
 
 const App = () => {
 
-  const [isLoading, setisLoading] = useState(true);
   const [isLoggedin, setisLoggedin] = useState(false)
-
-  useEffect(() => {
-    setTimeout(() => {
-      setisLoading(false)
-    }, 5000);
-  }, [])
 
   const handleSignIn = () => {
     setisLoggedin(true)
@@ -30,8 +22,7 @@ const App = () => {
   }
 
   return <>
-    {isLoading ? (<Splash />) : isLoggedin ? (
-      // {true ? (
+    { isLoggedin ? (
       <Router>
         <Routes>
           <Route exact path="/create-post" element={<NewPost />} />

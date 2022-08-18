@@ -10,23 +10,25 @@ const Home = ({ signOutCallback }) => {
 
   const aboutRef = useRef();
   const categoryRef = useRef();
+  const mainRef = useRef();
 
   const handleCategory = useCallback((choice) => {
     setCategory(choice);
+    mainRef?.current?.scrollIntoView({behavior: "smooth"})
   }, []);
 
   const categories = [{
     label: "general technology",
-    value: "gt"
+    value: "at"
   }, {
     label: "bio technology",
     value: "bt"
   }, {
-    label: "food technology",
-    value: "ft"
+    label: "talent source",
+    value: "ts"
   }, {
     label: "agro technology",
-    value: "at"
+    value: "agt"
   }, {
     label: "finance technology",
     value: "ft"
@@ -35,8 +37,8 @@ const Home = ({ signOutCallback }) => {
   return <div>
     <Navigation refs={{ aboutRef, categoryRef }} signOutCallback={signOutCallback} />
     <Landing />
-    <Categories ref={categoryRef} categories={categories} handleCategory={cat => handleCategory(cat)} selectedCategory={category} />
-    <MainHome category={category} />
+    <Categories ref={categoryRef} categories={categories} handleCategory={cat => handleCategory(cat)} selectedCategory={category}/>
+    <MainHome ref={mainRef} category={category} />
     <About ref={aboutRef} />
   </div>
 };
